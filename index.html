@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>hello</title>
-</head>
-<body>
-<p1>
-hello
-</p1>
-</body>
 
+<head>
+</head>
+    <form id="my-form">
+      <input type="text" id="secret-input">
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+    const correctText = "sebastianstevens"; // Store the correct text here
+
+    document.getElementById("my-form").addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const enteredText = document.getElementById("secret-input").value;
+
+      if (enteredText === correctText) {
+        window.location.replace("./new-file.html");
+      } else {
+        // Show error message
+        alert("Incorrect text. Try again.");
+      }
+    });
+    </script>
 </html>
