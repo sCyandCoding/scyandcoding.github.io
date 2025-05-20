@@ -25,3 +25,8 @@
       padding: 10px;
       font-size: 16px;
     }
+
+h1 {
+    height: 100%;
+      margin: 0;
+}
