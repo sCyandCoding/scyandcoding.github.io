@@ -2,6 +2,8 @@ body {
   background-color: black;
 }
 
-p1 {
+header p1 {
   color: white;
+  margin: auto;
+  text-align: top;
 }
