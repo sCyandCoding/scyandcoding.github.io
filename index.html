@@ -6,16 +6,18 @@
   <meta charset="UTF-8">
   <title>sCyand's Stuff</title>
 </head>
-  <header>
-     <h1>
-    sCyand's Stuff
-  </h1>
-  </header>
+
 <body>
-  <form id="my-form">
-    <input type="text" id="secret-input" placeholder="Enter secret text">
-    <button type="submit">Submit</button>
-  </form>
+  <div class="page-container">
+    <header>
+      <h1>sCyand's Stuff</h1>
+    </header>
+
+    <form id="my-form">
+      <input type="text" id="secret-input" placeholder="Enter secret text">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
   <script>
     const correctText = "sebastianstevens";
@@ -25,7 +27,7 @@
       const enteredText = document.getElementById("secret-input").value;
 
       if (enteredText === correctText) {
-        window.location.href = "./Home"; // Correct path to your target page
+        window.location.href = "./Home";
       } else {
         alert("Incorrect text. Try again.");
       }
