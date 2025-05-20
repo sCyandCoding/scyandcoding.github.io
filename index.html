@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
-  <title>hello</title>
+  <meta charset="UTF-8">
+  <title>Centered Form</title>
   <style>
-    /* You can also put this in styles.css */
-    body, html {
+    html, body {
       height: 100%;
       margin: 0;
     }
 
-    .form-container {
+    body {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      justify-content: center;  /* Horizontal center */
+      align-items: center;      /* Vertical center */
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
     }
   </style>
 </head>
-
 <body>
-  <div class="form-container">
-    <form id="my-form">
-      <input type="text" id="secret-input">
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+  <form id="my-form">
+    <input type="text" id="secret-input" placeholder="Enter secret text">
+    <button type="submit">Submit</button>
+  </form>
 
-  <script type="text/javascript">
+  <script>
     const correctText = "sebastianstevens";
 
     document.getElementById("my-form").addEventListener('submit', function(event) {
@@ -41,7 +47,7 @@
       const enteredText = document.getElementById("secret-input").value;
 
       if (enteredText === correctText) {
-        window.location.href = "./Home"; // Corrected syntax
+        window.location.href = "./Home"; // Correct path to your target page
       } else {
         alert("Incorrect text. Try again.");
       }
