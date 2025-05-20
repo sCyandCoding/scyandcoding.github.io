@@ -4,3 +4,11 @@ body {
   font-family: Verdana, Sans-Serif;
   background-color: black;
 }
+
+body1 {
+  text-align: center;
+}
+
+body2 {
+  text-align: left;
+}
