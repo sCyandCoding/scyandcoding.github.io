@@ -27,8 +27,7 @@ header h1 {
   white-space: nowrap;    /* Prevent wrapping */
   text-align: center;
   margin-bottom: 20px;    /* Space below the header */
-  overflow: hidden;       /* Hide anything that overflows */
-  text-overflow: ellipsis; /* Optionally show '...' if the text is too long */  /* Prevent text from overflowing the viewport */
+  overflow: hidden;     
 }
 
 form {
