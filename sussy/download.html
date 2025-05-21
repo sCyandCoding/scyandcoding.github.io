@@ -16,13 +16,12 @@
   </style>
 </head>
 <body>
-  <h1>Download Launcher HTML</h1>
-  <button onclick="downloadFile()">Download example-launcher.html</button>
+  <h1>Download Custom HTML</h1>
+  <button id="downloadBtn">Download HTML File</button>
 
   <script>
-    function downloadFile() {
-      const htmlContent = `
-<!DOCTYPE html>
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const htmlContent = `<!DOCTYPE html>
 <html>
 <head>
   <title>Go to Example.com</title>
@@ -45,4 +44,31 @@
 <body>
   <h1>Go to Example.com</h1>
   <input type="text" id="dummyInput" placeholder="Type anything..." autofocus />
-  <p>Press <strong>Ctrl + Enter</st
+  <p>Press <strong>Ctrl + Enter</strong> to open <a href='https://example.com' target='_blank'>example.com</a></p>
+
+  <script>
+    document.getElementById("dummyInput").addEventListener("keydown", function(event) {
+      if (event.ctrlKey && event.key === "Enter") {
+        window.open("https://example.com", "_blank");
+      }
+    });
+  </script>
+</body>
+</html>`;
+
+      const blob = new Blob([htmlContent], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "example-launcher.html";
+      document.body.appendChild(a);
+      a.click();
+
+      // Cleanup
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
