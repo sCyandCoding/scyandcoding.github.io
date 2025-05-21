@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download HTML File</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Download Launcher HTML</h1>
+  <button onclick="downloadFile()">Download example-launcher.html</button>
+
+  <script>
+    function downloadFile() {
+      const htmlContent = `
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Go to Example.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    p {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Go to Example.com</h1>
+  <input type="text" id="dummyInput" placeholder="Type anything..." autofocus />
+  <p>Press <strong>Ctrl + Enter</st
